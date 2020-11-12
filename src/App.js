@@ -7,12 +7,14 @@ import SizeFilter from "./SizeFilter";
 import RegionFilter from "./RegionFilter";
 import Sort from "./Sort";
 
+
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { Paper } from "@material-ui/core";
+import { Typography } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import './App.css';
 
@@ -108,28 +110,22 @@ class App extends Component {
   render() {
     return (
       <div>
-          <div> 
-            <Grid container spacing={3}>
-              <Grid item xs={3}>
+          <div style={{marginTop:"1rem"}}> 
+            <Grid container justify="space-around">
                 <SizeFilter filter={this.state.filter} changeSize={this.changeSize}/>
-              </Grid>
-              <Grid item xs={3}>
                 <RegionFilter filter={this.state.filter} changeRegion={this.changeRegion}/>
-              </Grid>
-              <Grid item xs={3}>
-                  <Sort sortMethod={this.state.sortMethod} changeSortMethod={this.changeSortMethod}/>
-              </Grid>
+                <Sort sortMethod={this.state.sortMethod} changeSortMethod={this.changeSortMethod}/>
             </Grid>
           </div>
 
           <div>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} style={{marginTop:"1rem"}}>
               <Grid item xs={6}>
-                <h1>Items</h1>
+                <Typography variant='h4' align='center'>Items</Typography>
                 <ItemList filter={this.state.filter} sortMethod={this.state.sortMethod} addItem={this.addItem} removeItem={this.removeItem} quantity={this.state.quantity}/>
               </Grid>
               <Grid item xs={6}>
-                <h1>Cart</h1>
+                <Typography variant='h4' align='center'>Cart</Typography>
                 <Cart quantity={this.state.quantity} cart={this.state.cart} total={this.state.total} removeFromCart={this.removeFromCart}/>
               </Grid>
             </Grid>
