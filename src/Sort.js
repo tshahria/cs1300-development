@@ -10,7 +10,7 @@ class Sort extends Component {
         let sortMethod = this.props.sortMethod;
         return (
             <FormControl>
-                <InputLabel id="demo-simple-select-label">Region</InputLabel>
+                <InputLabel id="demo-simple-select-label">Sort By</InputLabel>
                 <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
