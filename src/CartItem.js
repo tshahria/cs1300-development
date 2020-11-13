@@ -7,13 +7,14 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import DeleteIcon from '@material-ui/icons/Delete';
 import {
   List,
   ListItemText,
   ListItem,
 } from "@material-ui/core";
 
-class FashionItem extends Component {
+class CartItem extends Component {
     render() {
         let item = this.props.item;
         return (
@@ -22,11 +23,11 @@ class FashionItem extends Component {
                     <Grid container spacing={3}>
                         <Grid item xs={4}>
                             <Card>
-                            <CardMedia
-                                style={{height:140}}
-                                image={item.image}
-                                title={item.name}
-                            />
+                                <CardMedia
+                                    style={{height:140}}
+                                    image={item.image}
+                                    title={item.name}
+                                />
                             </Card>
                         </Grid>
                         <Grid item xs={4}>
@@ -37,18 +38,21 @@ class FashionItem extends Component {
                             </ListItemText>
                             <ListItemText>${item.price}</ListItemText>
                             <ListItemText>Size: {item.size}</ListItemText>
-                            <ListItemText>Region: {item.region}</ListItemText>
+                            <ListItemText>Quantity in Cart: {this.props.quantity}</ListItemText>
+                            <ListItemText>Total: {this.props.total}</ListItemText>
                         </Grid>
                         <Grid item xs={1}>
                         </Grid>
                         <Grid item xs={3}>
-                            <ButtonCounter addItem = {this.props.addItem} removeItem={this.props.removeItem} item={item} quantity={this.props.quantity}/>
+                            <DeleteIcon onClick={() => {
+                                this.props.removeFromCart(item);
+                            }}/>
                         </Grid>
                     </Grid>
                 </ListItem>
             </Card>
         );
-    }
-}
+    }   
 
-export default FashionItem;
+}
+export default CartItem;

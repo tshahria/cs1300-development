@@ -14,7 +14,8 @@ import {
   Card
 } from "@material-ui/core";
 
-import DeleteIcon from '@material-ui/icons/Delete';
+import CartItem from "./CartItem"
+
 import * as Constants from './constant.js'
 
 class Cart extends Component {
@@ -22,40 +23,12 @@ class Cart extends Component {
         let quantity = this.props.quantity[item.name];
         let total = item.price*quantity;
         return (
-        <ListItem>
-            <Grid container spacing={3}>
-                <Grid item xs={4}>
-                    <CardMedia
-                        style={{height:140}}
-                        image={item.image}
-                        title={item.name}
-                    />
-                </Grid>
-                <Grid item xs={4}>
-                    <ListItemText>{item.name}</ListItemText>
-                    <ListItemText>${item.price}</ListItemText>
-                    <ListItemText>Size: {item.size}</ListItemText>
-                    <ListItemText>Quantity in Cart: {quantity}</ListItemText>
-                    <ListItemText>Total: {total}</ListItemText>
-                </Grid>
-                <Grid item xs={1}>
-                </Grid>
-                <Grid item xs={3}>
-                    <DeleteIcon onClick={() => {
-                        this.props.removeFromCart(item);
-                    }}/>
-                </Grid>
-            </Grid>
-        </ListItem>
+            <CartItem quantity={quantity} total={total} item={item} removeFromCart={this.props.removeFromCart}/>
     );
   };
+
   render() {    
       const listItems = this.props.cart.map(this.createCart);
-      const styles = theme => ({
-        disabledButton: {
-            backgroundColor: theme.palette.primary || 'red'
-        }
-      });
 
       listItems.push(
         <ListItem style={{textAlign:"center"}}> 
