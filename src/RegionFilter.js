@@ -8,14 +8,14 @@ import {Regions} from './constant.js';
 
 class RegionFilter extends Component {
     render() {
-        let filt = this.props.filter;
+        let filter = this.props.filter;
         return (
             <FormControl>
                 <InputLabel id="demo-simple-select-label">Region</InputLabel>
                 <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                value={filt['region']}
+                value={filter['region']}
                 onChange={this.props.changeRegion}
                 >
                 <MenuItem value={Regions.ALL_REGIONS}>{Regions.ALL_REGIONS}</MenuItem>

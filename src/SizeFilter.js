@@ -8,14 +8,14 @@ import {Sizes} from './constant.js';
 
 class SizeFilter extends Component {
     render() {
-        let filt = this.props.filter;
+        let filter = this.props.filter;
         return (
             <FormControl>
                 <InputLabel id="demo-simple-select-label">Size</InputLabel>
                 <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                value={filt['size']}
+                value={filter['size']}
                 onChange={this.props.changeSize}
                 >
                 <MenuItem value={Sizes.ALL_SIZES}>{Sizes.ALL_SIZES}</MenuItem>

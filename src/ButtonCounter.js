@@ -12,18 +12,18 @@ class ButtonCounter extends React.Component {
   };
 
   render() {
-    let qt = this.props.quantity;
-    if (this.props.item.name in qt) {
-        qt = qt[this.props.item.name];
+    let quantity = this.props.quantity;
+    if (this.props.item.name in quantity) {
+        quantity = quantity[this.props.item.name];
     } else {
-        qt = 0;
+        quantity = 0;
     }
-    const displayCounter = qt > 0;
+    const displayCounter = quantity > 0;
 
     return (
       <ButtonGroup size="small" aria-label="small outlined button group">
         <Button onClick={this.handleIncrement}>+</Button>
-        {displayCounter && <Button disabled>{qt}</Button>}
+        {displayCounter && <Button disabled>{quantity}</Button>}
         {displayCounter && <Button onClick={this.handleDecrement}>-</Button>}
       </ButtonGroup>
     );
