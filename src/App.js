@@ -6,7 +6,7 @@ import Cart from "./Cart";
 import SizeFilter from "./SizeFilter";
 import RegionFilter from "./RegionFilter";
 import Sort from "./Sort";
-
+import {SortTypes, Sizes, Regions} from "./constant.js";
 
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
@@ -24,10 +24,10 @@ class App extends Component {
     this.state = {
       cart: [],
       filter: {
-        size: "All Sizes",
-        region: "All Regions"
+        size: Sizes.ALL_SIZES,
+        region: Regions.ALL_REGIONS
       }, 
-      sortMethod: "alphabetically",
+      sortMethod: SortTypes.NAME,
       total: 0,
       quantity: {}
     };

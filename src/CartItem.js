@@ -39,7 +39,7 @@ class CartItem extends Component {
                             <ListItemText>${item.price}</ListItemText>
                             <ListItemText>Size: {item.size}</ListItemText>
                             <ListItemText>Quantity in Cart: {this.props.quantity}</ListItemText>
-                            <ListItemText>Total: {this.props.total}</ListItemText>
+                            <ListItemText>Total: ${this.props.total}</ListItemText>
                         </Grid>
                         <Grid item xs={1}>
                         </Grid>

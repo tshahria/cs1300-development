@@ -16,8 +16,6 @@ import {
 
 import CartItem from "./CartItem"
 
-import * as Constants from './constant.js'
-
 class Cart extends Component {
     createCart = item => {
         let quantity = this.props.quantity[item.name];

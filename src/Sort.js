@@ -4,6 +4,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import {SortTypes} from './constant.js';
 
 class Sort extends Component {
     render() {
@@ -17,8 +18,8 @@ class Sort extends Component {
                 value={sortMethod}
                 onChange={this.props.changeSortMethod}
                 >
-                <MenuItem value={"alphabetically"}>Alphabetically</MenuItem>
-                <MenuItem value={"price"}>Price</MenuItem>
+                <MenuItem value={SortTypes.NAME}>{SortTypes.NAME}</MenuItem>
+                <MenuItem value={SortTypes.PRICE}>{SortTypes.PRICE}</MenuItem>
                 </Select>
             </FormControl>);
         }

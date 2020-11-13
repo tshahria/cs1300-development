@@ -83,5 +83,29 @@ export const items = [
         region: "China",
         size: "XXS"
     }, 
-]
+];
+
+export const SortTypes = {
+    NAME: 'name',
+    PRICE: 'price'
+};
+
+export const Sizes = {
+    ALL_SIZES: "All Sizes",
+    XXS: "XXS",
+    XS: "XS",
+    S: "S",
+    M: "M",
+    L: "L",
+    XL: "XL"
+};
+
+export const Regions = {
+    ALL_REGIONS: "All Regions",
+    BANGLADESH: "Bangladesh",
+    USA: "USA",
+    CHINA: "China"
+}
+
+
 

@@ -4,6 +4,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import {Sizes} from './constant.js';
 
 class SizeFilter extends Component {
     render() {
@@ -17,13 +18,13 @@ class SizeFilter extends Component {
                 value={filt['size']}
                 onChange={this.props.changeSize}
                 >
-                <MenuItem value={"All Sizes"}>All Sizes</MenuItem>
-                <MenuItem value={"XXS"}>XXS</MenuItem>
-                <MenuItem value={"XS"}>XS</MenuItem>
-                <MenuItem value={"S"}>S</MenuItem>
-                <MenuItem value={"M"}>M</MenuItem>
-                <MenuItem value={"L"}>L</MenuItem>
-                <MenuItem value={"XL"}>XL</MenuItem>
+                <MenuItem value={Sizes.ALL_SIZES}>{Sizes.ALL_SIZES}</MenuItem>
+                <MenuItem value={Sizes.XXS}>{Sizes.XXS}</MenuItem>
+                <MenuItem value={Sizes.XS}>{Sizes.XS}</MenuItem>
+                <MenuItem value={Sizes.S}>{Sizes.S}</MenuItem>
+                <MenuItem value={Sizes.M}>{Sizes.M}</MenuItem>
+                <MenuItem value={Sizes.L}>{Sizes.L}</MenuItem>
+                <MenuItem value={Sizes.XL}>{Sizes.XL}</MenuItem>
                 </Select>
             </FormControl>);
         }

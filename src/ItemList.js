@@ -17,7 +17,7 @@ import {
   Card
 } from "@material-ui/core";
 
-import * as Constants from './constant.js'
+import {items, Sizes, Regions, SortTypes} from './constant.js'
 
 class ItemList extends Component {
   createList = item => {
@@ -36,23 +36,23 @@ class ItemList extends Component {
 
     handleFilter(filter, data) {
         let filteredData = data;
-        if (filter['size'] != "All Sizes") {
+        if (filter['size'] != Sizes.ALL_SIZES) {
             filteredData = filteredData.filter(item => item['size'] == filter['size'])
         }
-        if (filter['region'] != "All Regions") {
+        if (filter['region'] != Regions.ALL_REGIONS) {
             filteredData = filteredData.filter(item => item['region'] == filter['region'])
         }
         return filteredData;
     }
 
     handleSort(data, sortMethod) {
-        if (sortMethod == "alphabetically") {
+        if (sortMethod == SortTypes.NAME) {
             data.sort((a,b)=>{
                 if (a.name < b.name) {return -1;} 
                 if (a.name > b.name) {return 1;} 
                 return 0;
             })
-        } else {
+        } else if (sortMethod == SortTypes.PRICE){
             data.sort((a,b)=>{
                 if (a.price < b.price) {return -1;} 
                 if (a.price > b.price) {return 1;} 
@@ -61,7 +61,7 @@ class ItemList extends Component {
         }
     }
     render() {
-        let filtered_data = this.handleFilter(this.props.filter, Constants.items);
+        let filtered_data = this.handleFilter(this.props.filter, items);
         this.handleSort(filtered_data, this.props.sortMethod)
         const listItems = filtered_data.map(this.createList);
         return <List>{listItems}</List>;
