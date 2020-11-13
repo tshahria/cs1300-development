@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { Paper } from "@material-ui/core";
 import Grid from '@material-ui/core/Grid';
 import ButtonCounter from "./ButtonCounter"
+import FashionItem from "./FashionItem"
+
 import CardMedia from '@material-ui/core/CardMedia';
 import {
   FormControl,
@@ -20,32 +22,7 @@ import * as Constants from './constant.js'
 class ItemList extends Component {
   createList = item => {
     return (
-      <ListItem>
-        <Grid container spacing={3}>
-            <Grid item xs={4}>
-                <CardMedia
-                    style={{height:140}}
-                    image={item.image}
-                    title={item.name}
-                />
-            </Grid>
-            <Grid item xs={4}>
-                <ListItemText>{item.name}</ListItemText>
-                <ListItemText>${item.price}</ListItemText>
-                <ListItemText>Size: {item.size}</ListItemText>
-                <ListItemText>Region: {item.region}</ListItemText>
-            </Grid>
-            <Grid item xs={1}>
-            </Grid>
-            <Grid item xs={3}>
-                <ButtonCounter addItem = {this.addItem} removeItem={this.removeItem} item={item} quantity={this.props.quantity}/>
-            </Grid>
-        </Grid>
-        
-        <ListItemIcon>
-          
-        </ListItemIcon>
-      </ListItem>
+        <FashionItem item={item} quantity={this.props.quantity} addItem={this.addItem} removeItem={this.removeItem}/>
     );
   };
 
