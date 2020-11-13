@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 
-class GroupedButtons extends React.Component {
+class ButtonCounter extends React.Component {
   handleIncrement = () => {
     this.props.addItem(this.props.item);
   };
@@ -30,4 +30,4 @@ class GroupedButtons extends React.Component {
   }
 }
 
-export default GroupedButtons;
+export default ButtonCounter;

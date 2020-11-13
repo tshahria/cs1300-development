@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import { Paper } from "@material-ui/core";
 import Grid from '@material-ui/core/Grid';
-import GroupedButtons from "./GroupedButtons"
 import CardMedia from '@material-ui/core/CardMedia';
 import {
   FormControl,
@@ -52,7 +51,7 @@ class Cart extends Component {
   };
   render() {    
       const listItems = this.props.cart.map(this.createCart);
-      listItems.push(<ListItem> <ListItemText> Total in Cart: ${this.props.total}</ListItemText></ListItem>)
+      listItems.push(<ListItem style={{textAlign:"center"}}> <ListItemText> Total in Cart: ${this.props.total}</ListItemText></ListItem>)
       return <List>{listItems}</List>;
 
   }

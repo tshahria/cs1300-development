@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { Paper } from "@material-ui/core";
 import Grid from '@material-ui/core/Grid';
-import GroupedButtons from "./GroupedButtons"
+import ButtonCounter from "./ButtonCounter"
 import CardMedia from '@material-ui/core/CardMedia';
 import {
   FormControl,
@@ -38,7 +38,7 @@ class ItemList extends Component {
             <Grid item xs={1}>
             </Grid>
             <Grid item xs={3}>
-                <GroupedButtons addItem = {this.addItem} removeItem={this.removeItem} item={item} quantity={this.props.quantity}/>
+                <ButtonCounter addItem = {this.addItem} removeItem={this.removeItem} item={item} quantity={this.props.quantity}/>
             </Grid>
         </Grid>
         
