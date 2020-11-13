@@ -18,6 +18,7 @@ class SizeFilter extends Component {
                 onChange={this.props.changeSize}
                 >
                 <MenuItem value={"All Sizes"}>All Sizes</MenuItem>
+                <MenuItem value={"XXS"}>XXS</MenuItem>
                 <MenuItem value={"XS"}>XS</MenuItem>
                 <MenuItem value={"S"}>S</MenuItem>
                 <MenuItem value={"M"}>M</MenuItem>

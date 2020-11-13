@@ -51,7 +51,19 @@ class Cart extends Component {
   };
   render() {    
       const listItems = this.props.cart.map(this.createCart);
-      listItems.push(<ListItem style={{textAlign:"center"}}> <ListItemText> Total in Cart: ${this.props.total}</ListItemText></ListItem>)
+      const styles = theme => ({
+        disabledButton: {
+            backgroundColor: theme.palette.primary || 'red'
+        }
+      });
+
+      listItems.push(
+        <ListItem style={{textAlign:"center"}}> 
+            <ListItemText> 
+                Total in Cart: ${this.props.total}
+            </ListItemText>
+        </ListItem>
+      )
       return <List>{listItems}</List>;
 
   }
