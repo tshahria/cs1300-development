@@ -27,11 +27,10 @@ My state contains the following items:
   
   
 ## How user interactions can trigger changes in the state of components
-
-  User adding/removing an item changes two things in the state:
-    * The Quantity dictionary
-    * The quantity of that item is incremented
-    * The Cart
-    * The Item is added to the cart
-    * User clicking the sort/filter updates the Filter and SortMethod states
-    * This causes a rerender of the item list.
+User adding/removing an item changes two things in the state:
+ * The Quantity dictionary
+ * The quantity of that item is incremented
+ * The Cart
+ * The Item is added to the cart
+ * User clicking the sort/filter updates the Filter and SortMethod states
+ * This causes a rerender of the item list.
