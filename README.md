@@ -9,7 +9,10 @@ I have one main App Component which uses the following components to render:
   * ItemList (the component that handles rendering all the items)
   * Cart (the component responsible for the cart of my website and rendering it)
 
-I have a constants file that stores my enums and my item list
+
+I have a constants file that stores my enums and my item list.
+
+
 I have 3 enums:
   * Regions
   * Sizes
@@ -21,6 +24,8 @@ My state contains the following items:
   * Quantity: This maps an item name to the quantity of that item in my cart
   * Filter: This is an object that helps me determine what filters are currently on
   * SortMethod: This is a string that helps me determine what the sort method of my application is set to
+  
+  
 ## How user interactions can trigger changes in the state of components
 
   User adding/removing an item changes two things in the state:
